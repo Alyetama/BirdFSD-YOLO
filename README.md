@@ -1,10 +1,10 @@
-# BirdFSD-YOLOv5
+# BirdFSD-YOLO
 
 Build and train a custom model to identify birds visiting bird feeders.
 
-📖 **[Documentation](https://birdfsd-yolov5.readthedocs.io/en/latest/)**
+📖 **[Documentation](https://birdfsd-yolo.readthedocs.io/en/latest/)**
 
-[![Poetry Build](https://github.com/bird-feeder/BirdFSD-YOLOv5/actions/workflows/poetry-build.yml/badge.svg)](https://github.com/bird-feeder/BirdFSD-YOLOv5/actions/workflows/poetry-build.yml) [![Docker Build](https://github.com/bird-feeder/BirdFSD-YOLOv5/actions/workflows/docker-build.yml/badge.svg)](https://github.com/bird-feeder/BirdFSD-YOLOv5/actions/workflows/docker-build.yml) [![Documentation Status](https://readthedocs.org/projects/birdfsd-yolov5/badge/?version=latest)](https://birdfsd-yolov5.readthedocs.io/en/latest/?badge=latest) [![Supported Python versions](https://img.shields.io/badge/Python-%3E=3.8-blue.svg)](https://www.python.org/downloads/) [![PEP8](https://img.shields.io/badge/Code%20style-PEP%208-orange.svg)](https://www.python.org/dev/peps/pep-0008/) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8810d995e593497d9bd04afcfdc366ce)](https://www.codacy.com/gh/bird-feeder/BirdFSD-YOLOv5/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bird-feeder/BirdFSD-YOLOv5&amp;utm_campaign=Badge_Grade) [![GitHub latest release](https://badgen.net/github/release/bird-feeder/BirdFSD-YOLOv5)](https://github.com/bird-feeder/BirdFSD-YOLOv5/releases) [![Docker Hub](https://badgen.net/badge/icon/Docker%20Hub?icon=docker&label)](https://hub.docker.com/r/alyetama/birdfsd-yolov5) [![GitHub License](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/bird-feeder/BirdFSD-YOLOv5/blob/main/LICENSE)
+[![Poetry Build](https://github.com/bird-feeder/BirdFSD-YOLO/actions/workflows/poetry-build.yml/badge.svg)](https://github.com/bird-feeder/BirdFSD-YOLO/actions/workflows/poetry-build.yml) [![Docker Build](https://github.com/bird-feeder/BirdFSD-YOLO/actions/workflows/docker-build.yml/badge.svg)](https://github.com/bird-feeder/BirdFSD-YOLO/actions/workflows/docker-build.yml) [![Documentation Status](https://readthedocs.org/projects/birdfsd-yolo/badge/?version=latest)](https://birdfsd-yolo.readthedocs.io/en/latest/?badge=latest) [![Supported Python versions](https://img.shields.io/badge/Python-%3E=3.8-blue.svg)](https://www.python.org/downloads/) [![PEP8](https://img.shields.io/badge/Code%20style-PEP%208-orange.svg)](https://www.python.org/dev/peps/pep-0008/) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8810d995e593497d9bd04afcfdc366ce)](https://www.codacy.com/gh/bird-feeder/BirdFSD-YOLO/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bird-feeder/BirdFSD-YOLO&amp;utm_campaign=Badge_Grade) [![GitHub latest release](https://badgen.net/github/release/bird-feeder/BirdFSD-YOLO)](https://github.com/bird-feeder/BirdFSD-YOLO/releases) [![Docker Hub](https://badgen.net/badge/icon/Docker%20Hub?icon=docker&label)](https://hub.docker.com/r/alyetama/birdfsd-yolo) [![GitHub License](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/bird-feeder/BirdFSD-YOLO/blob/main/LICENSE)
 
 ## Requirements
 - 🐍 [python>=3.8](https://www.python.org/downloads/)
@@ -13,7 +13,7 @@ Build and train a custom model to identify birds visiting bird feeders.
 
 ### Fork and clone this repository
 
-- First, [fork the repository](https://github.com/bird-feeder/BirdFSD-YOLOv5/fork).
+- First, [fork the repository](https://github.com/bird-feeder/BirdFSD-YOLO/fork).
 - Enable workflows in your fork:
 <img src="https://i.imgur.com/aF5U6J0.png"  width="720"> 
 
@@ -22,9 +22,9 @@ Build and train a custom model to identify birds visiting bird feeders.
 
 - Clone the repository:
 ```shell
-git clone https://github.com/bird-feeder/BirdFSD-YOLOv5.git
-cd BirdFSD-YOLOv5
-git clone https://github.com/ultralytics/yolov5.git
+git clone https://github.com/bird-feeder/BirdFSD-YOLO.git
+cd BirdFSD-YOLO
+git clone https://github.com/ultralytics/yolo.git
 ```
 
 ### Install dependencies
@@ -94,7 +94,7 @@ nano .env  # or with any other editor
 - When you're done editing the `.env` file, run:
 
 ```sh
-python birdfsd_yolov5/model_utils/check_env_file.py --env-file .env
+python birdfsd_yolo/model_utils/check_env_file.py --env-file .env
 ```
 
 ## 🗃️ Setup
@@ -112,44 +112,44 @@ python birdfsd_yolov5/model_utils/check_env_file.py --env-file .env
 
 ## 🔧 Dataset preparation
 
-- **Option 1:** Run the `JSON to YOLOv5 (data preprocessing)` workflow under github `Actions`.
+- **Option 1:** Run the `JSON to YOLO (data preprocessing)` workflow under github `Actions`.
 
 - **Option 2:** Run it locally with:
 
   ```shell
-  python birdfsd_yolov5/preprocessing/json2yolov5.py
+  python birdfsd_yolo/preprocessing/json2yolov5.py
   mv dataset-YOLO/dataset_config.yml .
-  python birdfsd_yolov5/model_utils/relative_to_abs.py
+  python birdfsd_yolo/model_utils/relative_to_abs.py
   ```
 
 ## ⚡ Training[^1]
 
 Use the *Colab* notebook: 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bird-feeder/BirdFSD-YOLOv5/blob/main/notebooks/BirdFSD_YOLOv5_train.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bird-feeder/BirdFSD-YOLO/blob/main/notebooks/BirdFSD_YOLOv5_train.ipynb)
 
 ## 📝 Prediction
 
 - **Option 1:** Run the `Predict` workflow under github `Actions`.
 - **Option 2:** Use the *Colab* notebook:
 
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bird-feeder/BirdFSD-YOLOv5/blob/main/notebooks/BirdFSDV1_YOLOv5_LS_Predict.ipynb)
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bird-feeder/BirdFSD-YOLO/blob/main/notebooks/BirdFSDV1_YOLOv5_LS_Predict.ipynb)
   
   
 ## 🐳 Using Docker
 ```sh
-docker pull alyetama/birdfsd-yolov5:latest
+docker pull alyetama/birdfsd-yolo:latest
 ```
 
 ### Example Usage
 ```sh
-docker run -it --env-file .env alyetama/birdfsd-yolov5 python birdfsd_yolov5/preprocessing/json2yolov5.py
+docker run -it --env-file .env alyetama/birdfsd-yolo python birdfsd_yolo/preprocessing/json2yolov5.py
 ```
 
 
 ## 🔖 Related
 
-- [BirdFSD-YOLOv5-APP](https://github.com/bird-feeder/BirdFSD-YOLOv5-App)
+- [BirdFSD-YOLO-APP](https://github.com/bird-feeder/BirdFSD-YOLO-App)
 
 
-[^1]: [yolov5/wiki/Train-Custom-Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)
+[^1]: [yolo/wiki/Train-Custom-Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)
