@@ -138,12 +138,12 @@ Use the *Colab* notebook:
   
 ## 🐳 Using Docker
 ```sh
-docker pull alyetama/birdfsd-yolo:latest
+docker pull alyetama/birdfsd-yolov5:latest
 ```
 
 ### Example Usage
 ```sh
-docker run -it --env-file .env alyetama/birdfsd-yolo python birdfsd_yolo/preprocessing/json2yolov5.py
+docker run -it --env-file .env alyetama/birdfsd-yolo python birdfsd_yolov5/preprocessing/json2yolov5.py
 ```
 
 
